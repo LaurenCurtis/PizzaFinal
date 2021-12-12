@@ -8,4 +8,7 @@
     <li>No pizzas have been added yet.</li>
     {% endfor %}
 </ul>
+<p>
+    <a href="{% url 'pizzas:new_comment' pizza.id %}">Add new Comment</a>
+</p>
 {% endblock content %}
