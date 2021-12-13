@@ -2,10 +2,17 @@
 {% block content %}
 <p>Pizza: {{pizza}}</p>
 <ul>
+    <p>Toppings</p>
     {% for topping in toppings %}
     <li>{{topping.name|linebreaks}}</li>
     {% empty %}
-    <li>No pizzas have been added yet.</li>
+    <li>No toppings have been added yet.</li>
+    {% endfor %}
+    <p>Comments</p>
+    {% for comment in comments %}
+    <li>{{comment.name|linebreaks}}</li>
+    {% empty %}
+    <li>No comments have been added yet.</li>
     {% endfor %}
 </ul>
 <p>
