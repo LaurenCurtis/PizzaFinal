@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from .models import Pizza,Topping
 from .forms import CommentForm
+
 # Create your views here.
 def index(request):
     return render(request,'pizzas/index.html')
@@ -25,10 +26,10 @@ def new_comment(request, pizza_id):
         form = CommentForm(data=request.POST)
         
         if form.is_valid():
-            new_entry = form.save(commit=False)
-            new_entry.pizza = pizza
-            new_entry.save()
-            form.save()
+            new_comment = form.save(commit=False)
+            new_comment.pizza = pizza
+            new_comment.save()
             return redirect('pizzas:pizza', pizza_id=pizza_id)
-    context = {'form':form, 'pizza':pizza}
+    context = {'pizza':pizza, 'form':form}
     return render(request, 'pizzas/new_comment.html',context)
+

@@ -1,4 +1,10 @@
-{% extends "pizzas/base.html" %}
-{% block content %}
-<p>This is the pizzerias list of pizzas with toppings included.</p>
-{% endblock content %}
+{%extends "pizzas/base.html"%}
+
+{% block page_header %}
+<div class="jumbotron">
+    <h1 class="display-3">Pizzeria.</h1>
+    <p class="lead">This website will allow you to view different types of 
+        pizzas and their different toppings.
+    </p>
+</div>
+{% endblock page_header %}
