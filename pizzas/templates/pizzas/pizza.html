@@ -26,6 +26,24 @@
     {% empty %}
     <p>There are no comments for this pizza yet.</p>
     {% endfor %}
+    {% load daguerre %}
+    {% if pizza.name == 'Supreme' %}
+    <p>
+        {% load static %}<img src="{% static "media/supreme.jpg" %}" alt ="pizza"/>
+    </p>
+    {% elif pizza.name == 'Hawaiian' %}
+    <p>
+        {% load static %}<img src="{% static "media/hawaiian.jpg" %}" alt ="pizza"/>
+    </p>
+    {% elif pizza.name == 'Meat Lovers' %}
+    <p>
+        {% load static %}<img src="{% static "media/meats.jpg" %}" alt ="pizza"/>
+    </p>
+    {% elif pizza.name == 'Garden' %}
+    <p>
+        {% load static %}<img src="{% static "media/garden.jpg" %}" alt ="pizza"/>
+    </p>
+    {% endif %}
 
 
 {% endblock content %}
