@@ -24,7 +24,7 @@
         </div>
     </div>
     {% empty %}
-    <p>There are no comments for pizza topic yet.</p>
+    <p>There are no comments for this pizza yet.</p>
     {% endfor %}
     <p>
         <a href="{% url 'pizzas:new_comment' pizza.id %}">Add a New Comment</a>
