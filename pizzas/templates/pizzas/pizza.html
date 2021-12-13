@@ -4,9 +4,7 @@
 {% endblock page_header %}
 
 {% block content %}
-<p>
-    <a href="{% url 'pizzas:new_comment' pizza.id %}">Add new Comment</a>
-</p>
+    <p>Toppings:</p>
     {% for topping in toppings %}
     <div class="card mb-3">
         <div class="card-body">
@@ -16,11 +14,13 @@
     {% empty %}
     <p>There are no toppings for this pizza yet.</p>
     {% endfor %}
-
+    <p>
+        <a href="{% url 'pizzas:new_comment' pizza.id %}">Add new Comment</a>
+    </p>
     {% for comment in comments %}
     <div class="card mb-3">
         <div class="card-body">
-            {{ comment.comment|linebreaks }}
+            {{ comment.name|linebreaks }}
         </div>
     </div>
     {% empty %}
